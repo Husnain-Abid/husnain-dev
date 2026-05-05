@@ -233,13 +233,6 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Delivered pixel-perfect UI from Figma with flawless responsiveness. Code quality and attention to detail were excellent.",
-    name: "Ash Bose",
-    role: "Product Owner",
-    company: "United States",
-  },
-  {
-    quote:
       "Great communication and very easy to work with. Understood requirements quickly and delivered as expected.",
     name: "Rafiq I.",
     role: "Client",
