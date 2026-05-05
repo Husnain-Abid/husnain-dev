@@ -58,9 +58,9 @@ export function Contact() {
 
   const update =
     (k: keyof FormState) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-      setForm((f) => ({ ...f, [k]: e.target.value }));
-    };
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setForm((f) => ({ ...f, [k]: e.target.value }));
+      };
 
 
   return (
@@ -126,42 +126,68 @@ export function Contact() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={onSubmit} className="space-y-5">
-
-                  <input
-                    placeholder="Name"
-                    value={form.name}
-                    onChange={update("name")}
-                    className="w-full rounded-xl bg-background border px-4 py-3"
-                  />
-                  {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
-
-                  <input
-                    placeholder="Email"
-                    value={form.email}
-                    onChange={update("email")}
-                    className="w-full rounded-xl bg-background border px-4 py-3"
-                  />
-
-                  <textarea
-                    placeholder="Message"
-                    rows={5}
-                    value={form.message}
-                    onChange={update("message")}
-                    className="w-full rounded-xl bg-background border px-4 py-3"
-                  />
-
-                  <MagneticButton
-  onClick={() => {
+                <form onSubmit={onSubmit} className="relative space-y-5" data-testid="contact-form">
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <Field
+                      label="Your name"
+                      id="name"
+                      value={form.name}
+                      onChange={update("name")}
+                      error={errors.name}
+                      placeholder="Jane Doe"
+                    />
+                    <Field
+                      label="Email"
+                      id="email"
+                      type="email"
+                      value={form.email}
+                      onChange={update("email")}
+                      error={errors.email}
+                      placeholder="jane@company.com"
+                    />
+                  </div>
+                 
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="text-xs uppercase tracking-[0.18em] text-muted-foreground"
+                    >
+                      Tell me about the project
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={5}
+                      value={form.message}
+                      onChange={update("message")}
+                      placeholder="What are you building, and what does success look like in 90 days?"
+                      className={`mt-2 w-full rounded-2xl bg-white/[0.03] border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/20 transition resize-none ${errors.message
+                          ? "border-destructive/60 focus:border-destructive"
+                          : "border-white/10 focus:border-primary/50"
+                        }`}
+                      data-testid="input-message"
+                    />
+                    {errors.message ? (
+                      <p className="mt-1.5 text-xs text-destructive">{errors.message}</p>
+                    ) : null}
+                  </div>
+                  <div className="flex items-center justify-between gap-4 pt-2">
+                    <p className="text-xs text-muted-foreground">
+                      I reply within 24 hours, EST/PST.
+                    </p>
+                    <MagneticButton
+                      onClick={() => {
                         const f = document.querySelector(
                           "[data-testid='contact-form']",
                         ) as HTMLFormElement | null;
                         f?.requestSubmit();
-                      }}                    className="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2">
-                    Send Message
-                    <ArrowRightIcon className="h-4 w-4" />
-                  </MagneticButton>
-
+                      }}
+                      className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground glow-blue"
+                      testId="contact-submit"
+                    >
+                      Send Message
+                      {/* <ArrowRight className="h-4 w-4" /> */}
+                    </MagneticButton>
+                  </div>
                 </form>
               )}
 
@@ -173,3 +199,43 @@ export function Contact() {
     </section>
   );
 }
+
+
+
+function Field({
+  label,
+  id,
+  value,
+  onChange,
+  error,
+  type = "text",
+  placeholder,
+}: {
+  label: string;
+  id: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string;
+  type?: string;
+  placeholder?: string;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+        {label}
+      </label>
+      <input
+        id={id}
+        type={type}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={`mt-2 w-full rounded-2xl bg-white/[0.03] border px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/20 transition ${error ? "border-destructive/60 focus:border-destructive" : "border-white/10 focus:border-primary/50"
+          }`}
+        data-testid={`input-${id}`}
+      />
+      {error ? <p className="mt-1.5 text-xs text-destructive">{error}</p> : null}
+    </div>
+  );
+}
+
