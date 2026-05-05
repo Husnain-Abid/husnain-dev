@@ -20,7 +20,7 @@ export function Footer() {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground glow-blue self-start"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-12 py-3.5 text-sm font-medium text-primary-foreground glow-blue self-start"
             data-cursor="hover"
             data-testid="footer-cta"
           >
