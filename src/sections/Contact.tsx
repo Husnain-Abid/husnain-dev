@@ -25,7 +25,6 @@ const LinkedinIcon = (props: any) => (
 type FormState = {
   name: string;
   email: string;
-  budget: string;
   message: string;
 };
 
@@ -33,7 +32,6 @@ export function Contact() {
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
-    budget: "",
     message: "",
   });
 
@@ -43,8 +41,10 @@ export function Contact() {
   const validate = () => {
     const e: typeof errors = {};
     if (form.name.trim().length < 2) e.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter valid email.";
-    if (form.message.trim().length < 10) e.message = "Write at least a sentence.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      e.email = "Please enter a valid email.";
+    if (form.message.trim().length < 10)
+      e.message = "Tell me a little more — at least a sentence.";
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -58,9 +58,10 @@ export function Contact() {
 
   const update =
     (k: keyof FormState) =>
-      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setForm((f) => ({ ...f, [k]: e.target.value }));
-      };
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      setForm((f) => ({ ...f, [k]: e.target.value }));
+    };
+
 
   return (
     <section id="contact" className="relative py-16 md:py-20">
@@ -118,6 +119,11 @@ export function Contact() {
                 <div className="text-center py-16">
                   <CheckIcon className="h-10 w-10 mx-auto text-primary" />
                   <h3 className="mt-4 text-2xl font-bold">Message Sent</h3>
+                  <h3 className="mt-6 font-display text-2xl font-bold">Message received.</h3>
+                  <p className="mt-3 max-w-md text-sm text-muted-foreground leading-relaxed">
+                    Thanks {form.name.split(" ")[0]}. I'll be back in your inbox within 24 hours
+                    with a clear next step.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={onSubmit} className="space-y-5">
@@ -137,17 +143,6 @@ export function Contact() {
                     className="w-full rounded-xl bg-background border px-4 py-3"
                   />
 
-                  <select
-                    value={form.budget}
-                    onChange={update("budget")}
-                    className="w-full rounded-xl bg-background border px-4 py-3"
-                  >
-                    <option value="">Select budget</option>
-                    <option>Under $10k</option>
-                    <option>$10k - $25k</option>
-                    <option>$25k+</option>
-                  </select>
-
                   <textarea
                     placeholder="Message"
                     rows={5}
@@ -156,7 +151,13 @@ export function Contact() {
                     className="w-full rounded-xl bg-background border px-4 py-3"
                   />
 
-                  <MagneticButton className="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2">
+                  <MagneticButton
+  onClick={() => {
+                        const f = document.querySelector(
+                          "[data-testid='contact-form']",
+                        ) as HTMLFormElement | null;
+                        f?.requestSubmit();
+                      }}                    className="bg-primary text-white px-6 py-3 rounded-full flex items-center gap-2">
                     Send Message
                     <ArrowRightIcon className="h-4 w-4" />
                   </MagneticButton>
