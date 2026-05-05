@@ -9,21 +9,16 @@ import { MagneticButton } from "@/components/MagneticButton";
 
 const GithubIcon = (props: any) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path d="M12 .5C5.7.5.5 5.9.5 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.5-4-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.8 2 .8 2 1.7 1.1 3.5.8 4.3.6.1-.8.4-1.4.8-1.7-2.7-.3-5.6-1.4-5.6-6.3 0-1.4.5-2.5 1.2-3.4-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.4 1.3 1-.3 2-.4 3-.4s2 .1 3 .4c2.4-1.6 3.4-1.3 3.4-1.3.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.4 0 4.9-2.9 6-5.6 6.3.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.8.6C20.1 22 23.5 17.6 23.5 12.3 23.5 5.9 18.3.5 12 .5z"/>
+    <path d="M12 .5C5.7.5.5 5.9.5 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.5-4-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.8 2 .8 2 1.7 1.1 3.5.8 4.3.6.1-.8.4-1.4.8-1.7-2.7-.3-5.6-1.4-5.6-6.3 0-1.4.5-2.5 1.2-3.4-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.4 1.3 1-.3 2-.4 3-.4s2 .1 3 .4c2.4-1.6 3.4-1.3 3.4-1.3.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.4 0 4.9-2.9 6-5.6 6.3.5.4.9 1.2.9 2.4v3.5c0 .3.2.7.8.6C20.1 22 23.5 17.6 23.5 12.3 23.5 5.9 18.3.5 12 .5z" />
   </svg>
 );
 
 const LinkedinIcon = (props: any) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 23.5h4V7.98h-4V23.5zM8.5 7.98h3.8v2.1h.1c.5-1 1.9-2.3 3.9-2.3 4.2 0 5 2.8 5 6.5v9.2h-4v-8.2c0-2-.03-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.4v8.4h-4V7.98z"/>
+    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 23.5h4V7.98h-4V23.5zM8.5 7.98h3.8v2.1h.1c.5-1 1.9-2.3 3.9-2.3 4.2 0 5 2.8 5 6.5v9.2h-4v-8.2c0-2-.03-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.4v8.4h-4V7.98z" />
   </svg>
 );
 
-const TwitterIcon = (props: any) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path d="M22.46 6c-.77.35-1.5.6-2.3.7.83-.5 1.4-1.3 1.7-2.2-.8.5-1.7.8-2.6 1-1.5-1.6-4-.8-4.6 1.3-.3 1 .2 2.1 1.2 2.6-2.2-.1-4.2-1.2-5.6-2.9-.8 1.3-.4 3 1 3.8-.7 0-1.4-.2-2-.5 0 1.6 1.2 3 2.8 3.3-.5.1-1 .2-1.5.1.4 1.3 1.7 2.2 3.2 2.2-1.2 1-2.8 1.6-4.5 1.6H3c1.6 1 3.5 1.6 5.5 1.6 6.6 0 10.2-5.5 10.2-10.2v-.5c.7-.5 1.4-1.2 1.9-2z"/>
-  </svg>
-);
 
 /* ---------------- TYPES ---------------- */
 
@@ -63,9 +58,9 @@ export function Contact() {
 
   const update =
     (k: keyof FormState) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-      setForm((f) => ({ ...f, [k]: e.target.value }));
-    };
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setForm((f) => ({ ...f, [k]: e.target.value }));
+      };
 
   return (
     <section id="contact" className="relative py-16 md:py-20">
@@ -82,10 +77,21 @@ export function Contact() {
 
             <div className="mt-10 space-y-3">
               {[
-                { icon: EnvelopeIcon, label: "Email", href: "mailto:armash@armashata.dev" },
-                { icon: GithubIcon, label: "GitHub", href: "https://github.com" },
-                { icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com" },
-                { icon: TwitterIcon, label: "Twitter", href: "https://twitter.com" },
+                {
+                  icon: EnvelopeIcon,
+                  label: "Email",
+                  href: "mailto:husnainabid066@gmail.com",
+                },
+                {
+                  icon: GithubIcon,
+                  label: "GitHub",
+                  href: "https://github.com/Husnain-Abid",
+                },
+                {
+                  icon: LinkedinIcon,
+                  label: "LinkedIn",
+                  href: "https://www.linkedin.com/in/husnain-abid-9a9384266/",
+                },
               ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}

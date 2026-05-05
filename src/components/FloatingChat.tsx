@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
+import Image from "next/image";
 
 export function FloatingChat() {
   const [open, setOpen] = useState(false);
@@ -30,9 +31,17 @@ export function FloatingChat() {
         >
           {/* Header */}
           <div className="flex items-center gap-3">
-            <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/15 text-primary font-display font-bold">
-              AA
-            </div>
+<div className="grid h-10 w-10 place-items-center rounded-full bg-primary/15 overflow-hidden">
+  <Image
+    src="/icon.png"
+    alt="Logo"
+    width={28}
+    height={28}
+    className="object-contain"
+  />
+</div>
+
+
             <div>
               <div className="text-sm font-medium">Husnain Abid</div>
               <div className="text-xs text-muted-foreground flex items-center gap-1.5">
