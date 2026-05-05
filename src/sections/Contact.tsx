@@ -1,6 +1,6 @@
 "use client";
 import { useState, type FormEvent } from "react";
-// import { ArrowRight, Check, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowRight, Check, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { MagneticButton } from "@/components/MagneticButton";
 
@@ -56,7 +56,7 @@ export function Contact() {
               description="The fastest way to start is a 20-minute intro call. Tell me about the problem, the timeline, and the bar — I'll come back within 24 hours with a clear path forward."
             />
             
-            {/* <div className="mt-10 space-y-3">
+            <div className="mt-10 space-y-3">
               {[
                 { icon: Mail, label: "armash@armashata.dev", href: "mailto:armash@armashata.dev" },
                 { icon: Github, label: "github.com/armashata", href: "https://github.com" },
@@ -83,7 +83,7 @@ export function Contact() {
                   <ArrowRight className="ml-auto h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
                 </a>
               ))}
-            </div> */}
+            </div>
 
           </div>
 
@@ -99,7 +99,7 @@ export function Contact() {
               {sent ? (
                 <div className="relative flex flex-col items-center text-center py-16" data-testid="contact-success">
                   <div className="grid h-16 w-16 place-items-center rounded-full bg-primary/15 text-primary glow-blue">
-                    {/* <Check className="h-7 w-7" /> */}
+                    <Check className="h-7 w-7" />
                   </div>
                   <h3 className="mt-6 font-display text-2xl font-bold">Message received.</h3>
                   <p className="mt-3 max-w-md text-sm text-muted-foreground leading-relaxed">
@@ -135,19 +135,24 @@ export function Contact() {
                     >
                       Budget (optional)
                     </label>
-                    <select
-                      id="budget"
-                      value={form.budget}
-                      onChange={update("budget")}
-                      className="mt-2 w-full rounded-2xl bg-white/[0.03] border border-white/10 px-4 py-3 text-sm text-foreground focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition"
-                      data-testid="input-budget"
-                    >
-                      <option value="">Select a range</option>
-                      <option>Under $10k</option>
-                      <option>$10k – $25k</option>
-                      <option>$25k – $75k</option>
-                      <option>$75k+</option>
-                    </select>
+         
+<select
+  id="budget"
+  value={form.budget}
+  onChange={update("budget")}
+  className="mt-2 w-full rounded-2xl bg-background text-foreground border border-white/10 px-4 py-3 text-sm focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition"
+  data-testid="input-budget"
+>
+  <option value="" className="bg-background text-foreground">
+    Select a range
+  </option>
+  <option className="bg-background text-foreground">Under $10k</option>
+  <option className="bg-background text-foreground">$10k – $25k</option>
+  <option className="bg-background text-foreground">$25k – $75k</option>
+  <option className="bg-background text-foreground">$75k+</option>
+</select>
+
+
                   </div>
                   <div>
                     <label
@@ -188,7 +193,7 @@ export function Contact() {
                       testId="contact-submit"
                     >
                       Send Message
-                      {/* <ArrowRight className="h-4 w-4" /> */}
+                      <ArrowRight className="h-4 w-4" />
                     </MagneticButton>
                   </div>
                 </form>
