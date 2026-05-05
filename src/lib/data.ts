@@ -32,7 +32,8 @@ export const PROJECTS: Project[] = [
       "Developed responsive frontend using React.js and integrated Laravel APIs for booking, search, and user management.",
     outcome:
       "Improved booking flow and user experience with fast and responsive UI, making it easier for users to find and book doctors.",
-  },
+  live: "https://doctorfindy.com/",
+    },
   {
     slug: "dream-hire",
     title: "Dream Hire",
