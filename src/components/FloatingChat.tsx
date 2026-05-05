@@ -31,15 +31,15 @@ export function FloatingChat() {
         >
           {/* Header */}
           <div className="flex items-center gap-3">
-<div className="grid h-10 w-10 place-items-center rounded-full bg-primary/15 overflow-hidden">
-  <Image
-    src="/icon.png"
-    alt="Logo"
-    width={28}
-    height={28}
-    className="object-contain"
-  />
-</div>
+            <div className="grid h-10 w-10 place-items-center rounded-full bg-primary/15 overflow-hidden">
+              <Image
+                src="/icon.png"
+                alt="Logo"
+                width={28}
+                height={28}
+                className="object-contain"
+              />
+            </div>
 
 
             <div>
@@ -53,8 +53,8 @@ export function FloatingChat() {
 
           {/* Message */}
           <div className="mt-4 rounded-2xl bg-white/[0.03] p-4 text-sm text-foreground/85 leading-relaxed">
-            Hey 👋  
-            Drop your project details here — I’ll get back to you within 24 hours.  
+            Hey 👋
+            Drop your project details here — I’ll get back to you within 24 hours.
             If it’s urgent, mention your timeline for faster response.
           </div>
 

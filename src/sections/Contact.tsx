@@ -72,7 +72,7 @@ export function Contact() {
             <SectionHeading
               eyebrow="Let's build"
               title="Have a project in mind?"
-              description="Tell me about your idea and I'll respond within 24 hours."
+              description="Tell me about the problem, the timeline, and the bar — I'll come back within 24 hours with a clear path forward."
             />
 
             <div className="mt-10 space-y-3">
