@@ -52,7 +52,7 @@ export function Navbar() {
   <img
     src="/logo.png"
     alt="Husnain Dev"
-    className="h-full w-full object-cover"
+    className=" object-contain"
   />
 </span>
 

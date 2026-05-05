@@ -9,7 +9,11 @@ export type Project = {
   problem: string;
   solution: string;
   outcome: string;
-  url?: string;
+
+
+  github?: string;
+  live?: string;
+
 };
 
 export const PROJECTS: Project[] = [
@@ -44,6 +48,9 @@ export const PROJECTS: Project[] = [
       "Built a responsive UI with role-based access and state management using Redux Toolkit.",
     outcome:
       "Delivered a smooth user experience with structured workflows for buyers and sellers.",
+    github: "https://github.com/Husnain-Abid/dream-hire",
+    live: "https://dream-hire-five.vercel.app/",
+
   },
   {
     slug: "freepoint-home",
@@ -60,6 +67,9 @@ export const PROJECTS: Project[] = [
       "Developed full-stack application with dynamic configuration logic and REST APIs.",
     outcome:
       "Enabled users to customize designs interactively with accurate pricing feedback.",
+
+    github: "https://github.com/Husnain-Abid/home_customization",
+    live: "https://freepointhomes.com/",
   },
   {
     slug: "clearset-ai",
@@ -76,6 +86,10 @@ export const PROJECTS: Project[] = [
       "Built interactive UI using Three.js and GSAP animations with modern design.",
     outcome:
       "Delivered a visually engaging website that improved brand presentation.",
+
+    github: "https://github.com/Husnain-Abid/clearset",
+    live: "https://clearset.vercel.app/",
+
   },
   {
     slug: "client-dashboard",
@@ -92,6 +106,9 @@ export const PROJECTS: Project[] = [
       "Developed full-stack dashboard with API integration and CRUD functionality.",
     outcome:
       "Improved efficiency by centralizing data management and workflows.",
+
+    github: "https://github.com/Husnain-Abid/dashboard-dreamhire-seller",
+    live: "https://dashboard-dreamhire-seller.vercel.app/#",
   },
   {
     slug: "stellar-bulldogs",
@@ -108,6 +125,10 @@ export const PROJECTS: Project[] = [
       "Developed a responsive eCommerce-style website with structured listings, detailed pages, and smooth navigation. Focused on clean UI and optimized performance for better user engagement.",
     outcome:
       "Delivered a visually appealing and easy-to-use platform that improved online presence and simplified customer interaction and inquiries.",
+
+    github: "https://github.com/Husnain-Abid/stellarbulldogs",
+    live: "https://www.stellarbulldogs.com/",
+
   }
 
 ];
@@ -183,38 +204,59 @@ export type Testimonial = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Husnain consistently delivered high-quality frontend work with clean and responsive UI. His attention to detail really improved the overall user experience.",
-    name: "Team Lead",
-    role: "Frontend Team",
-    company: "MustTech Solutions",
+      "The work was solid and he was very accommodating when our business requirements changed mid-project. Smooth communication throughout.",
+    name: "Bruce H.",
+    role: "Business Owner",
+    company: "United States",
   },
   {
     quote:
-      "A reliable developer who managed multiple projects efficiently and always met deadlines. Great communication and problem-solving skills.",
-    name: "Project Manager",
-    role: "Management",
-    company: "Software House",
+      "Second time working together — this time on deployment of a complex full-stack project. Consistently delivers and solves problems efficiently.",
+    name: "Jason T.",
+    role: "Startup Founder",
+    company: "United States",
   },
   {
     quote:
-      "Strong grip on React and API integration. He quickly understood requirements and implemented features with minimal revisions.",
-    name: "Senior Developer",
-    role: "Backend Team",
-    company: "Development Team",
+      "Completed everything on time and went above and beyond to ensure satisfaction. Highly recommended for web development work.",
+    name: "Marc P.",
+    role: "Client",
+    company: "United States",
   },
   {
     quote:
-      "Husnain played a key role in building responsive interfaces and improving application performance. Easy to work with and highly cooperative.",
-    name: "Client Feedback",
-    role: "Web Project",
-    company: "Freelance Client",
+      "Great job as always. Clean delivery and very reliable developer for ongoing web projects.",
+    name: "Skeeter F.",
+    role: "Repeat Client",
+    company: "United States",
   },
   {
     quote:
-      "Delivered projects with clean code and proper structure. His understanding of MERN stack helped in building scalable solutions.",
-    name: "Technical Lead",
-    role: "Full Stack Team",
-    company: "Tech Company",
+      "Delivered pixel-perfect UI from Figma with flawless responsiveness. Code quality and attention to detail were excellent.",
+    name: "Ash Bose",
+    role: "Product Owner",
+    company: "United States",
+  },
+  {
+    quote:
+      "Great communication and very easy to work with. Understood requirements quickly and delivered as expected.",
+    name: "Rafiq I.",
+    role: "Client",
+    company: "Sweden",
+  },
+  {
+    quote:
+      "Exceptional frontend execution with strong attention to UI detail and responsiveness across devices.",
+    name: "Ricky S.",
+    role: "UI/UX Client",
+    company: "United States",
+  },
+  {
+    quote:
+      "Helped redeploy and restructure my full-stack application. Now I can even manage basic edits myself — very helpful experience.",
+    name: "Josh B.",
+    role: "Founder",
+    company: "United States",
   },
 ];
 

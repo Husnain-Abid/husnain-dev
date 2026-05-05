@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Node.js",
   ],
   icons: {
-    icon: "/logo.png",
+    icon: "/app/icon.png",
   },
 };
 

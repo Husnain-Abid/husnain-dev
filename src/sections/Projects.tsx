@@ -93,7 +93,7 @@ export function Projects() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {p.tagline}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                {/* <div className="mt-4 flex flex-wrap gap-2">
                   {p.stack.slice(0, 4).map((s) => (
                     <span
                       key={s}
@@ -102,7 +102,34 @@ export function Projects() {
                       {s}
                     </span>
                   ))}
+                </div> */}
+
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-white/10 px-3 py-1 text-xs text-foreground/70 hover:bg-white/10 transition"
+                    >
+                      GitHub
+                    </a>
+                  )}
+
+                  {p.live && (
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs text-primary hover:bg-primary/20 transition"
+                    >
+                      Live Demo
+                    </a>
+                  )}
                 </div>
+
+
               </div>
             </button>
           ))}
