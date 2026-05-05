@@ -50,7 +50,7 @@ export function Navbar() {
 
 <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-primary/15 overflow-hidden">
   <img
-    src="/logo.png"
+    src="/icon.png"
     alt="Husnain Dev"
     className=" object-contain"
   />
