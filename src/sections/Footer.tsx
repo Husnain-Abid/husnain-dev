@@ -20,12 +20,13 @@ export function Footer() {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-12 py-3.5 text-sm font-medium text-primary-foreground glow-blue self-start"
+            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground glow-blue self-start"
             data-cursor="hover"
             data-testid="footer-cta"
           >
             Start a project <ArrowUpRight className="h-4 w-4" />
           </a>
+
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/5 pt-8 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">

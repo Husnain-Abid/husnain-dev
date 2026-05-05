@@ -60,13 +60,12 @@ export function Projects() {
           {PROJECTS.map((p, i) => (
             <button
               key={p.slug}
-              onClick={() => setActive(p)}
               className={`project-card group relative block overflow-hidden rounded-3xl glass text-left ${i % 3 === 0 ? "md:col-span-2" : ""
                 }`}
               data-cursor="hover"
               data-testid={`project-${p.slug}`}
             >
-              <div className="relative aspect-[16/10] w-full overflow-hidden">
+              <div className="relative aspect-[16/10] w-full overflow-hidden" onClick={() => setActive(p)}>
                 <img
                   src={p.cover}
                   alt={p.title}
