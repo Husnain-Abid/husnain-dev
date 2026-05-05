@@ -20,24 +20,6 @@ const ICONS = [Code2, Smartphone, Boxes, Palette, Brain];
 export function Services() {
   const ref = useRef<HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   const el = ref.current;
-  //   if (!el) return;
-  //   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  //   if (reduce) return;
-  //   const ctx = gsap.context(() => {
-  //     gsap.from(".service-card", {
-  //       y: 60,
-  //       opacity: 0,
-  //       duration: 0.9,
-  //       ease: "expo.out",
-  //       stagger: 0.08,
-  //       scrollTrigger: { trigger: el, start: "top 75%" },
-  //     });
-  //   }, ref);
-  //   return () => ctx.revert();
-  // }, []);
-
 
 
   useEffect(() => {
@@ -84,11 +66,13 @@ export function Services() {
     <section id="services" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+
           <SectionHeading
             eyebrow="Services"
-            title="What I'll build for you next."
-            description="A focused menu of the work I take on most. Engagements typically run 4 to 16 weeks, fixed-scope or embedded with your team."
+            title="What I can build for you"
+            description="I specialize in building modern web applications using the MERN stack, focusing on performance, scalability, and clean user experience."
           />
+
         </div>
 
         <div ref={ref} className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

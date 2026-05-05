@@ -39,7 +39,7 @@ export function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const headline = ["Building", "Scalable", "Web", "&", "Blockchain", "Solutions"];
+  const headline = ["Building", "Modern", "Scalable", "Web", "Applications"];
 
   return (
     <section
@@ -68,7 +68,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
-          Available for select Q3 engagements
+          Available for freelance & full-time opportunities
         </div>
 
         <h1
@@ -82,9 +82,8 @@ export function Hero() {
               className="inline-block overflow-hidden align-baseline pr-[0.25em]"
             >
               <span
-                className={`word inline-block ${
-                  w === "Blockchain" ? "text-primary text-glow" : ""
-                }`}
+                className={`word inline-block ${w === "Blockchain" ? "text-primary text-glow" : ""
+                  }`}
               >
                 {w}
               </span>
@@ -97,9 +96,10 @@ export function Hero() {
           className="mt-7 max-w-2xl text-base md:text-lg text-muted-foreground leading-relaxed"
           data-testid="hero-sub"
         >
-          I'm Armash Ata — a senior full-stack & blockchain engineer partnering with USA
-          startups, founders and agencies to ship audited Web3 protocols, AI-native SaaS,
-          and high-performance product experiences. From napkin sketch to live launch.
+          I'm Husnain Abid — a MERN Stack Developer specializing in building responsive
+          and scalable web applications using React.js and Node.js. I help businesses
+          turn ideas into real-world products with clean UI, efficient APIs, and
+          production-ready deployments.
         </p>
 
         <div ref={ctaRef} className="mt-10 flex flex-wrap items-center gap-4">
@@ -126,16 +126,16 @@ export function Hero() {
           className="mt-16 grid max-w-2xl grid-cols-3 gap-8 text-sm text-muted-foreground"
         >
           <div>
-            <div className="font-display text-2xl text-foreground">7+</div>
-            <div className="mt-1">Years building products</div>
+            <div className="font-display text-2xl text-foreground">1.5+</div>
+            <div className="mt-1">Years Experience</div>
           </div>
           <div>
-            <div className="font-display text-2xl text-foreground">$60M+</div>
-            <div className="mt-1">Moved on-chain by clients</div>
+            <div className="font-display text-2xl text-foreground">50+</div>
+            <div className="mt-1">Projects Delivered</div>
           </div>
           <div>
-            <div className="font-display text-2xl text-foreground">USA</div>
-            <div className="mt-1">Startup & agency focus</div>
+            <div className="font-display text-2xl text-foreground">MERN</div>
+            <div className="mt-1">Full Stack Focus</div>
           </div>
         </div>
 

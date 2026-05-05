@@ -43,10 +43,21 @@ export function Navbar() {
           data-cursor="hover"
           data-testid="nav-logo"
         >
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-primary/15 text-primary text-sm">
+          
+          {/* <span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-primary/15 text-primary text-sm">
             AA
-          </span>
-          <span className="hidden sm:inline text-sm">Armash Ata</span>
+          </span> */}
+
+<span className="inline-flex h-7 w-7 items-center justify-center rounded-md bg-primary/15 overflow-hidden">
+  <img
+    src="/logo.png"
+    alt="Husnain Dev"
+    className="h-full w-full object-cover"
+  />
+</span>
+
+
+          <span className="hidden sm:inline text-sm">Husnain Abid</span>
         </button>
 
         <nav className="hidden md:flex items-center gap-1">

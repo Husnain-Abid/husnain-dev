@@ -7,11 +7,12 @@ import { SKILLS } from "@/lib/data";
 gsap.registerPlugin(ScrollTrigger);
 
 const STATS = [
-  { label: "Years building products", to: 7, suffix: "+" },
-  { label: "Clients shipped for", to: 42, suffix: "+" },
-  { label: "Audited contracts deployed", to: 31, suffix: "" },
-  { label: "Avg. lighthouse score", to: 98, suffix: "" },
+  { label: "Years Experience", to: 2, suffix: "+" },
+  { label: "Projects Completed", to: 50, suffix: "+" },
+  { label: "Technologies Used", to: 10, suffix: "+" },
+  { label: "Client Work", to: 20, suffix: "+" },
 ];
+
 
 function Counter({ to, suffix }: { to: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -65,8 +66,8 @@ export function About() {
           <div className="lg:col-span-7">
             <SectionHeading
               eyebrow="About"
-              title="Senior engineer. Founder ally. Quietly relentless."
-              description="I'm Armash — a US-focused full-stack & blockchain developer who's spent the last seven years partnering with venture-backed founders, design-led agencies and growth-stage product teams. I write the contracts, ship the frontend, hire the team if you need one, and stay until the launch is live and stable."
+              title="MERN Stack Developer focused on building real-world web applications."
+              description="I'm Husnain Abid — a Full Stack MERN Developer with hands-on experience in building scalable and responsive web applications. I have worked on 50+ client projects, mainly focusing on frontend development with React.js while also handling backend APIs and deployments."
             />
             <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {STATS.map((s) => (
@@ -90,10 +91,10 @@ export function About() {
                 </div>
                 <ul className="mt-5 space-y-4 text-sm text-foreground/90 leading-relaxed">
                   {[
-                    "Direct line to a senior engineer — no account managers, no handoffs.",
-                    "Weekly Loom + a live demo every Friday. You always know what's shipping.",
-                    "Code you actually own. Documented, typed, and ready for your next hire.",
-                    "Audit-ready Solidity, accessibility-clean React, and infra you won't dread.",
+                    "Strong focus on clean and responsive UI using React.js and Tailwind CSS.",
+                    "Experience working on multiple client projects in fast-paced environments.",
+                    "Write maintainable and reusable code with proper structure and best practices.",
+                    "Comfortable with full-stack development including APIs, databases, and deployment.",
                   ].map((line) => (
                     <li key={line} className="flex gap-3">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary glow-blue" />
@@ -102,14 +103,16 @@ export function About() {
                   ))}
                 </ul>
               </div>
+
               <div className="mt-8 flex items-center gap-3 text-xs text-muted-foreground">
                 <span className="inline-flex h-9 items-center rounded-full glass px-3">
-                  Karachi · Working USA hours
+                  Lahore, Pakistan
                 </span>
                 <span className="inline-flex h-9 items-center rounded-full glass px-3">
-                  EST / PST friendly
+                  Open to Remote Work
                 </span>
               </div>
+
             </div>
           </div>
         </div>
