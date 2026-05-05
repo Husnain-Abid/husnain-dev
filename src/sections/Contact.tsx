@@ -66,8 +66,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-14 lg:grid-cols-12 lg:items-center">
-
+          <div className="grid gap-14 lg:grid-cols-12 ">
           {/* LEFT SIDE */}
           <div className="lg:col-span-5">
             <SectionHeading
